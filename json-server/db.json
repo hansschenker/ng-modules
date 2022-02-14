@@ -1,0 +1,12 @@
+{
+  "products": [
+    { "id": 1, "name": "Fruit 123456789", "price": "4.50", "category": "fruit"},
+    { "id": 2, "name": "Fruit 2", "price": "5.50", "category": "fruit"},
+    { "id": 3, "name": "Fruit 3", "price": "6.50", "category": "fruit"},
+    { "id": 4, "name": "Fruit 4", "price": "7.50", "category": "fruit"},
+    { "id": 5, "name": "Fruit 5", "price": "8.50", "category": "fruit"}
+  ],
+  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "profile": { "name": "typicode" }
+}

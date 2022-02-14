@@ -1,0 +1,16 @@
+<div  *ngIf="products$ | async as products">
+  <product-list
+  [products]="products"
+  (onProductSelected)="productSelected($event)"
+  (onProductDeleted)="productDeleted($event)"
+  ></product-list>
+</div>
+
+<product-item [product]="selectedProduct"></product-item>
+
+<!-- <div *ngIf="selectedProduct">
+  {{ selectedProduct.name }}
+</div> -->
+
+
+

@@ -1,0 +1,15 @@
+<h3>Product List</h3>
+<ul>
+  <li class="product-item" *ngFor="let product of products" >
+    <span (click)="selectProduct(product)">
+      <span id="product-id">
+        {{product.id }}
+      </span>
+       {{ product.name }}
+    </span>
+    <div id="product-buttons">
+     <button (click)="selectProduct(product)" id="product-show">!</button> <button (click)="deleteProduct(product)" id="product-delete">x</button>
+    </div>
+
+  </li>
+</ul>
