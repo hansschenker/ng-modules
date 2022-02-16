@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let bookmark of bookmarks$ | async">
+    {{ bookmark.url }}
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

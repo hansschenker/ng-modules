@@ -1,16 +1,22 @@
-<div  *ngIf="products$ | async as products">
+<!-- <div  *ngIf="products$ | async as products">
   <product-list
   [products]="products"
   (onProductSelected)="productSelected($event)"
   (onProductDeleted)="productDeleted($event)"
   ></product-list>
-</div>
+</div> -->
 
-<product-item [product]="selectedProduct"></product-item>
+<!-- <product-item [product]="selectedProduct"></product-item> -->
 
 <!-- <div *ngIf="selectedProduct">
   {{ selectedProduct.name }}
 </div> -->
 
-
-
+<!-- <pre>
+  {{ products$ | async | json }}
+</pre> -->
+<ul>
+  <li *ngFor="let product of products$ | async">
+    {{ product.name }}
+  </li>
+</ul>

@@ -1,0 +1,18 @@
+<ul>
+  <li *ngFor="let link of links$ | async">
+    <div>
+      {{ link.title }}
+    </div>
+    <div>
+      <!-- <a href="{{link.url1}}">{{ link.url1 }}</a> -->
+      <!-- <a href="appname://jointournament?id={{i}}">URLId-{{i}}</a>   --- -->
+      <!-- <a [href]="link.url1 | safeurl: 'appname://joinTournament?id='">URLId-{{i}}</a> -->
+      <a [href]="link.url1 | safeurl: 'link.url1' " >{{ link.title}}</a>
+      <button (click)="loadLink(link.url1)" >Link:  {{ link.url1 }}</button>
+    </div>
+
+  </li>
+</ul>
+
+
+<router-outlet></router-outlet>

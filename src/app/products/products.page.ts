@@ -1,8 +1,8 @@
+import { CrudHttpService } from '../shared/crud-http.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 // products feature
-import { ProductService } from './product.service';
 import { Product } from './state/product.interface';
 
 @Component({
@@ -12,11 +12,17 @@ import { Product } from './state/product.interface';
 })
 export class ProductsPage implements OnInit {
 
-  products$: Observable<Product[]>
+  // products$: Observable<Product[]>
   selectedProduct: Product | null = null;
-  constructor(private svc: ProductService) {
-    this.products$ = svc.products$
-   }
+
+  products$: Observable<Product[]> | null = of([])
+  constructor(private svc:CrudHttpService<Product>) {
+    this.products$ = svc.list("products")
+  }
+
+  // constructor(private svc: ProductService) {
+  //   this.products$ = svc.list$
+  //  }
 
   ngOnInit(): void {
   }
@@ -28,4 +34,7 @@ export class ProductsPage implements OnInit {
     this.selectedProduct = null;
     console.log("product deleted:", product);
   }
+
+
+
 }
